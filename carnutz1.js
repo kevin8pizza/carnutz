@@ -8,8 +8,6 @@ function appendYouTubeData(data) {
     };
 }
 
-
-
 function getData() {
     $("#ytThumbnails").empty();
     $("#wikiInfo").empty();
@@ -24,7 +22,7 @@ function getData() {
     console.log("Model = " + model);
 
     //------youtube API------
-    var youtubeKey = config.YOUTUBE;
+    var youtubeKey = apiKeys.YOUTUBE;
     var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + year + ' ' + make + ' ' + model + '&key=' + youtubeKey;
 
     $.ajax({
@@ -63,6 +61,7 @@ function getData() {
         }
     });
 };
+
 function appendwikiData(data) {
     console.log(data);
     $("#wikiInfo").append("<div class='wikiData row>'" + data.infobox + "</div>");
