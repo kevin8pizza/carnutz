@@ -24,9 +24,8 @@ function getData() {
     console.log("Model = " + model);
 
     //------youtube API------
-    var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='
-        + year + ' ' + make + ' ' + model
-        + '&key=AIzaSyA_M9tQdbY37D6VC48CZKh7voByUwEZO-w';
+    var youtubeKey = config.YOUTUBE;
+    var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + year + ' ' + make + ' ' + model + '&key=' + youtubeKey;
 
     $.ajax({
         type: 'GET',
