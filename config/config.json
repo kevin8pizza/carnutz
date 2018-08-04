@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "carnutz",
+    "database": "car_db",
     "host": "localhost",
     "dialect": "mysql"
   },
