@@ -24,27 +24,28 @@ function getData() {
     console.log("Model = " + model);
 
     //------youtube API------
+    var youTube = apiKeys.YOUTUBE;
     var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='
         + year + ' ' + make + ' ' + model
-        + '&key=AIzaSyA_M9tQdbY37D6VC48CZKh7voByUwEZO-w';
+        + '&key=' + youTube;
 
     $.ajax({
         type: 'GET',
         url: googleSearchURL,
         dataType: "json",
         crossDomain: true,
-        success: function (data) {
+        success: function(data) {
             appendYouTubeData(data);
         },
-        error: function (request, status, error) {
+        error: function(request, status, error) {
             console.log("test error");
             console.log(googleSearchURL);
             alert(request + status + error);
         }
     });
 
-    //------wikipedia API------
-    $.ajax({
+//------wikipedia API------
+$.ajax({
         type: 'GET',
         url: 'https://en.wikipedia.org/w/api.php?',
         data: {
@@ -54,10 +55,10 @@ function getData() {
             list: 'search',
             srsearch: year + "%20" + make + "%20" + model
         },
-        success: function (data) {
+        success: function(data) {
             appendwikiData(data);
         },
-        error: function (request, status, error) {
+        error: function(request, status, error) {
             console.log("test error");
             //console.log(wikiSearchURL);
             alert(request + status + error);
