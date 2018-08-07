@@ -40,6 +40,7 @@ function getData() {
     "https://www.googleapis.com/youtube/v3/search?part=snippet&q=";
   year + " " + make + " " + model + "&key=" + youTube;
 
+<<<<<<< HEAD
   $.ajax({
     type: "GET",
     url: googleSearchURL,
@@ -54,6 +55,13 @@ function getData() {
       alert(request + status + error);
     }
   });
+=======
+    //------youtube API------
+    var youTube = apikeys.YOUTUBE;
+    var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='
+        + year + ' ' + make + ' ' + model
+        + '&key=' + youTube;
+>>>>>>> master
 
   //------wikipedia API------
   $.ajax({
