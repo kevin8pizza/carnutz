@@ -27,6 +27,11 @@ function getData() {
         + year + ' ' + make + ' ' + model
         + '&key=' + youTube;
 
+    if (year||make||model === " ") {
+        $("#ytThumbnails").hide();
+        return;
+    }
+
     $.ajax({
         type: 'GET',
         url: googleSearchURL,
@@ -42,29 +47,4 @@ function getData() {
         }
     });
 
-//------wikipedia API------
-$.ajax({
-        type: 'GET',
-        url: 'https://en.wikipedia.org/w/api.php?',
-        data: {
-            action: 'query',
-            format: 'json',
-            origin: '*',
-            list: 'search',
-            srsearch: year + "%20" + make + "%20" + model
-        },
-        success: function(data) {
-            appendwikiData(data);
-        },
-        error: function(request, status, error) {
-            console.log("test error");
-            //console.log(wikiSearchURL);
-            alert(request + status + error);
-        }
-    });
-};
-
-function appendwikiData(data) {
-    console.log(data);
-    $("#wikiInfo").append("<div class='wikiData row>'" + data.infobox + "</div>");
 };
