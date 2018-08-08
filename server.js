@@ -21,13 +21,15 @@ require("./routes/user-api-routes")(app);
 var syncOptions = { force: false };
 
 // MySQL connection
-var SQLConnection = mysql.createConnection( {
+var connection = mysql.createConnection({
+  port: 3000,
   host: "localhost",
   user: "root",
   password: "carnutz",
+  database: "car_db"
 });
 
-SQLConnection.connect(function(err) {
+connection.connect(function(err) {
   if (err) throw err;
   console.log("Connected");
 });
