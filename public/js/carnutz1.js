@@ -22,15 +22,10 @@ function getData() {
     console.log("Model = " + model);
 
     //------youtube API------
-<<<<<<< HEAD:carnutz1.js
-    var youtubeKey = apiKeys.YOUTUBE;
-    var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + year + ' ' + make + ' ' + model + '&key=' + youtubeKey;
-=======
     var youTube = apikeys.YOUTUBE;
     var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='
         + year + ' ' + make + ' ' + model
         + '&key=' + youTube;
->>>>>>> 60182d105a5bfe8c9f3a41e8e215c9be6e8e3247:public/js/carnutz1.js
 
     $.ajax({
         type: 'GET',
