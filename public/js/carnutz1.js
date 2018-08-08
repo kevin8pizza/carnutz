@@ -27,11 +27,6 @@ function getData() {
         + year + ' ' + make + ' ' + model
         + '&key=' + youTube;
 
-    if (year||make||model === " ") {
-        $("#ytThumbnails").hide();
-        return;
-    }
-
     $.ajax({
         type: 'GET',
         url: googleSearchURL,
