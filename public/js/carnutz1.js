@@ -10,7 +10,7 @@ function appendYouTubeData(data) {
 
 function getData() {
     $("#ytThumbnails").empty();
-    $("#wikiInfo").empty();
+    $("#carDB").empty();
 
 
     var year = $("#year").val().trim();
@@ -42,4 +42,8 @@ function getData() {
         }
     });
 
+    // Information from car_db
+    $.ajax( {
+        type: 'GET',
+    })
 };

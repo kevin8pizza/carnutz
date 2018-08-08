@@ -2,7 +2,6 @@
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
 var mysql = require("mysql");
 var db = require("./models");
 
@@ -14,21 +13,24 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
-
 // Routes
 require("./routes/html-routes")(app);
 require("./routes/post-api-routes")(app);
 require("./routes/user-api-routes")(app);
 
 var syncOptions = { force: false };
+
+// MySQL connection
+var SQLConnection = mysql.createConnection( {
+  host: "localhost",
+  user: "root",
+  password: "carnutz",
+});
+
+SQLConnection.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected");
+});
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
