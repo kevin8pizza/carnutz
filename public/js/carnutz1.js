@@ -10,7 +10,7 @@ function appendYouTubeData(data) {
 
 function getData() {
     $("#ytThumbnails").empty();
-    $("#wikiInfo").empty();
+    $("#carDB").empty();
 
 
     var year = $("#year").val().trim();
@@ -42,29 +42,8 @@ function getData() {
         }
     });
 
-//------wikipedia API------
-$.ajax({
+    // Information from car_db
+    $.ajax( {
         type: 'GET',
-        url: 'https://en.wikipedia.org/w/api.php?',
-        data: {
-            action: 'query',
-            format: 'json',
-            origin: '*',
-            list: 'search',
-            srsearch: year + "%20" + make + "%20" + model
-        },
-        success: function(data) {
-            appendwikiData(data);
-        },
-        error: function(request, status, error) {
-            console.log("test error");
-            //console.log(wikiSearchURL);
-            alert(request + status + error);
-        }
-    });
-};
-
-function appendwikiData(data) {
-    console.log(data);
-    $("#wikiInfo").append("<div class='wikiData row>'" + data.infobox + "</div>");
+    })
 };
