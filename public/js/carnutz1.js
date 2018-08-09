@@ -22,7 +22,7 @@ function getData() {
     console.log("Model = " + model);
 
     //------youtube API------
-    var youTube = apikeys.YOUTUBE;
+    var youTube = "AIzaSyA_M9tQdbY37D6VC48CZKh7voByUwEZO-w"
     var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='
         + year + ' ' + make + ' ' + model
         + '&key=' + youTube;
@@ -32,10 +32,10 @@ function getData() {
         url: googleSearchURL,
         dataType: "json",
         crossDomain: true,
-        success: function(data) {
+        success: function (data) {
             appendYouTubeData(data);
         },
-        error: function(request, status, error) {
+        error: function (request, status, error) {
             console.log("test error");
             console.log(googleSearchURL);
             alert(request + status + error);
@@ -43,7 +43,9 @@ function getData() {
     });
 
     // Information from car_db
-    $.ajax( {
+    $.ajax({
         type: 'GET',
+        datatype: "json",
+        crossDomain: true,
     })
 };
