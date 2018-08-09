@@ -15,9 +15,15 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0",
     "mysql2": "^1.5.3",
+<<<<<<< HEAD
     "npm": "^6.3.0",
     "sequelize": "^4.38.0"
+=======
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0"
+>>>>>>> master
   },
   "devDependencies": {
     "chai": "^4.1.2",

@@ -17,8 +17,13 @@ function appendYouTubeData(data) {
 }
 
 function getData() {
+<<<<<<< HEAD
   $("#ytThumbnails").empty();
   $("#wikiInfo").empty();
+=======
+    $("#ytThumbnails").empty();
+    $("#carDB").empty();
+>>>>>>> master
 
   var year = $("#year")
     .val()
@@ -74,6 +79,7 @@ function getData() {
         + '&key=' + youTube;
 >>>>>>> b546ee31e2669dce6815e7cdbba183c3618a8513
 
+<<<<<<< HEAD
   //------wikipedia API------
   $.ajax({
     type: "GET",
@@ -100,3 +106,25 @@ function appendwikiData(data) {
   console.log(data);
   $("#wikiInfo").append("<div class='wikiData row>'" + data.infobox + "</div>");
 }
+=======
+    $.ajax({
+        type: 'GET',
+        url: googleSearchURL,
+        dataType: "json",
+        crossDomain: true,
+        success: function(data) {
+            appendYouTubeData(data);
+        },
+        error: function(request, status, error) {
+            console.log("test error");
+            console.log(googleSearchURL);
+            alert(request + status + error);
+        }
+    });
+
+    // Information from car_db
+    $.ajax( {
+        type: 'GET',
+    })
+};
+>>>>>>> master
