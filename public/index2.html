@@ -25,6 +25,19 @@
 
     <!-- Root to facebook -->
     <script>
+
+         window.fbAsyncInit = function () {
+                FB.init({
+                    appId: 299715787257013,
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v3.1'
+                });
+                 FB.getLoginStatus(function (response) {
+                 statusChangeCallback(response);
+             });
+            };
+
         function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
                 console.log(response);
@@ -44,21 +57,8 @@
                     statusChangeCallback(response);
                 });
             }
-        
-              window.fbAsyncInit = function () {
-            FB.init({
-                appId: 299715787257013,
-                cookie: true,
-                xfbml: true,
-                version: 'v3.1'
-            });
 
-            FB.AppEvents.logPageView();
 
-        };
-        FB.getLoginStatus(function (response) {
-                statusChangeCallback(response);
-            });
 
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
