@@ -27,7 +27,7 @@ module.exports = function(app) {
       res.json(dbUsers);
     });
   });
-  //may want to remove this code- business logic- maybe not able to remove User??
+//may want to remove this code- business logic- maybe not able to remove User??
   app.delete("/api/users/:id", function(req, res) {
     // Delete the User with the id available to us in req.params.id
     db.Users.destroy({
@@ -38,4 +38,5 @@ module.exports = function(app) {
       res.json(dbUsers);
     });
   });
+
 };
