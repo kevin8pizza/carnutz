@@ -41,6 +41,9 @@ function getData() {
   year + " " + make + " " + model + "&key=" + youTube;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b546ee31e2669dce6815e7cdbba183c3618a8513
   $.ajax({
     type: "GET",
     url: googleSearchURL,
@@ -55,6 +58,7 @@ function getData() {
       alert(request + status + error);
     }
   });
+<<<<<<< HEAD
 =======
     //------youtube API------
     var youTube = apikeys.YOUTUBE;
@@ -62,6 +66,13 @@ function getData() {
         + year + ' ' + make + ' ' + model
         + '&key=' + youTube;
 >>>>>>> master
+=======
+  //------youtube API------
+  var youTube = apikeys.YOUTUBE;
+    var googleSearchURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='
+        + year + ' ' + make + ' ' + model
+        + '&key=' + youTube;
+>>>>>>> b546ee31e2669dce6815e7cdbba183c3618a8513
 
   //------wikipedia API------
   $.ajax({
