@@ -1,0 +1,1 @@
+SELECT * FROM car_db.specs;

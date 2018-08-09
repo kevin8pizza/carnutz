@@ -70,6 +70,13 @@ h1 {
     margin-left: 20px;
 }
 
+#carDB {
+    text-align: center;
+    background: #FFFFFF;
+    position: absolute right;
+    margin-right: 20px;
+}
+
 #car {
     text-align: center;
     background: #FFFFFF;
