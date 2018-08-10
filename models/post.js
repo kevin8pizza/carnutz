@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
     title: {
       type: DataTypes.STRING,
@@ -24,5 +24,5 @@ module.exports = function (sequelize, DataTypes) {
   //     });
   //   };
 
-    return Post;
+  return Post;
 };
