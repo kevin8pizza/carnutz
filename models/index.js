@@ -16,7 +16,6 @@ if (config.use_env_variable) {
     config.username,
     config.password,
     config, {
-      host: "127.0.0.1",
     dialect: 'mysql'
   });
   );
